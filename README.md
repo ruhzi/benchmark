@@ -32,3 +32,14 @@ slot_error = min(|pred - true| / max(|true|, 1e-6), 1.0)
 ```
 
 `true` is `method_value`. A slot the model leaves blank scores 1.0. A sample's score is the mean over its slots, and a model's score is the mean over samples. Lower is better. Provider or harness failures are excluded from the mean rather than penalised.
+
+## Hugging Face
+
+The same two files are published as a dataset at [huggingface.co/datasets/ruhzi/foresightbench](https://huggingface.co/datasets/ruhzi/foresightbench):
+
+```python
+from datasets import load_dataset
+
+eval_set = load_dataset("ruhzi/foresightbench", "eval", split="test")
+corpus   = load_dataset("ruhzi/foresightbench", "corpus", split="train")
+```
