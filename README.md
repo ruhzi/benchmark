@@ -1,6 +1,6 @@
 # benchmark
 
-Ablation-outcome prediction samples extracted from arXiv papers. A model is given a researcher-voiced description of an experiment, including the baseline numbers, and must predict the numeric outcome of the ablation.
+A model is given a researcher-voiced description of an experiment, including the baseline numbers, and must predict the numeric outcome of the ablation.
 
 ## Files
 
