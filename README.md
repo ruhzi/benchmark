@@ -17,6 +17,7 @@ Every eval row is also in the corpus; `in_eval_set` on each corpus row marks it.
 |---|---|
 | `sample_id` | `<arxiv_id>-s<nnn>` |
 | `arxiv_id`, `title` | source paper |
+| `source_license` | the license the source paper carries on arXiv (see [License](#license)) |
 | `prompt` | the question given to the model; baseline values are stated, outcome values are withheld |
 | `asked` | the metrics to predict, in order |
 | `target` | answer key, positionally aligned with `asked`: `baseline_value` appears in the prompt, `method_value` is the hidden outcome |
@@ -47,6 +48,36 @@ slot_error = min(|pred - true| / max(|true|, 1e-6), 1.0)
 ```
 
 `true` is `method_value`. A slot the model leaves blank scores 1.0. A sample's score is the mean over its slots, and a model's score is the mean over samples. Lower is better. Provider or harness failures are excluded from the mean rather than penalised.
+
+## License
+
+ForesightBench has mixed licensing; [LICENSE](LICENSE) has the full terms.
+
+- **The dataset author's contribution** is licensed CC BY 4.0. This covers
+  the sample selection and decomposition, the question framing, the schema,
+  the `asked` / `target` / `meta` annotations and the area tags.
+- **Material from the source papers** stays under the license its authors
+  chose on arXiv. Each `prompt` adapts passages of one paper, and `title` is
+  that paper's title. The license is recorded per sample in `source_license`:
+
+| `source_license` | papers | corpus rows | eval rows |
+|---|---|---|---|
+| `cc-by-4.0` | 18 | 143 | 18 |
+| `cc-by-sa-4.0` | 2 | 7 | 2 |
+| `cc-by-nc-sa-4.0` | 1 | 2 | 1 |
+| `cc-by-nc-nd-4.0` | 1 | 1 | 1 |
+| `arxiv-nonexclusive-distrib-1.0` | 20 | 163 | 20 |
+
+If you use a sample, you are responsible for respecting its source license.
+To keep only material whose source is CC BY 4.0 (with `corpus` loaded as in the Hugging Face section below):
+
+```python
+cc_by = corpus.filter(lambda r: r["source_license"] == "cc-by-4.0")
+```
+
+Authors of a source paper who want its samples removed can email
+ruhaanchopra2005@gmail.com with the arXiv id. When you use ForesightBench,
+please also cite the source papers listed in the paper's Appendix D.
 
 ## Hugging Face
 
