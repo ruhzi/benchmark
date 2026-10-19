@@ -20,8 +20,23 @@ Every eval row is also in the corpus; `in_eval_set` on each corpus row marks it.
 | `prompt` | the question given to the model; baseline values are stated, outcome values are withheld |
 | `asked` | the metrics to predict, in order |
 | `target` | answer key, positionally aligned with `asked`: `baseline_value` appears in the prompt, `method_value` is the hidden outcome |
-| `meta` | component ablated, experimental setting, review flag |
+| `meta` | `base_id`, `title`, `area` (research-area tag, see below), component ablated, experimental setting, review flag |
 | `in_eval_set` | corpus only: whether the row is in `eval_set.jsonl` |
+
+## Research areas
+
+`meta.area` is a per-paper tag, assigned by hand from the paper's title and
+abstract and applied to every sample of that paper. It is the area split used
+in the paper's per-area results. Six values:
+
+| `area` | meaning | papers | corpus rows | eval rows |
+|---|---|---|---|---|
+| `vision` | Vision & multimodal | 9 | 101 | 9 |
+| `safety-interp` | Safety, attacks, interpretability & auditing | 9 | 61 | 9 |
+| `agents` | LLM agents, memory & context systems | 8 | 27 | 8 |
+| `applied-sci` | Applied & scientific ML (time series, control, neuro, reliability, recsys) | 8 | 65 | 8 |
+| `llm-training` | LLM pre-/post-training & architecture | 5 | 56 | 5 |
+| `llm-eval` | LLM evaluation & measurement studies | 3 | 6 | 3 |
 
 ## Scoring
 
