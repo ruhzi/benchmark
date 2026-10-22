@@ -21,13 +21,13 @@ ForesightBench combines two kinds of material, each under its own terms.
    arXiv, recorded for each sample in the `source_license` field:
 
    source_license                  license                                         papers  samples
-   cc-by-4.0                       https://creativecommons.org/licenses/by/4.0/         18      143
-   cc-by-sa-4.0                    https://creativecommons.org/licenses/by-sa/4.0/       2        7
-   cc-by-nc-sa-4.0                 https://creativecommons.org/licenses/by-nc-sa/4.0/    1        2
-   cc-by-nc-nd-4.0                 https://creativecommons.org/licenses/by-nc-nd/4.0/    1        1
-   arxiv-nonexclusive-distrib-1.0  https://arxiv.org/licenses/nonexclusive-distrib/1.0/ 20      163
+   cc-by-4.0                       https://creativecommons.org/licenses/by/4.0/            34      227
+   cc-by-sa-4.0                    https://creativecommons.org/licenses/by-sa/4.0/          2        7
+   cc-by-nc-sa-4.0                 https://creativecommons.org/licenses/by-nc-sa/4.0/       1        2
+   cc-by-nc-nd-4.0                 https://creativecommons.org/licenses/by-nc-nd/4.0/       3        7
+   arxiv-nonexclusive-distrib-1.0  https://arxiv.org/licenses/nonexclusive-distrib/1.0/    31      214
 
-   Counts are over the 316-sample corpus. The 42-sample eval set has one
+   Counts are over the 457-sample corpus. The 71-sample eval set has one
    sample per paper, so it carries every license in the table.
 
    If you use a sample, you are responsible for respecting its source license.

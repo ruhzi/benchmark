@@ -6,8 +6,8 @@ A model is given a researcher-voiced description of an experiment, including the
 
 | file | rows | contents |
 |---|---|---|
-| `full_corpus.jsonl` | 316 | every sample in the corpus, over 42 papers |
-| `eval_set.jsonl` | 42 | the frozen evaluation set: one sample drawn per paper (split seed 20260815) |
+| `full_corpus.jsonl` | 457 | every sample in the corpus, over 71 papers (43 submitted to arXiv 8--24 August 2026, 28 submitted 5--21 October 2026), 3,343 graded slots |
+| `eval_set.jsonl` | 71 | the evaluation set: one sample drawn per paper (split seed 20260815) |
 
 Every eval row is also in the corpus; `in_eval_set` on each corpus row marks it.
 
@@ -32,12 +32,12 @@ in the paper's per-area results. Six values:
 
 | `area` | meaning | papers | corpus rows | eval rows |
 |---|---|---|---|---|
-| `vision` | Vision & multimodal | 9 | 101 | 9 |
-| `safety-interp` | Safety, attacks, interpretability & auditing | 9 | 61 | 9 |
-| `agents` | LLM agents, memory & context systems | 8 | 27 | 8 |
-| `applied-sci` | Applied & scientific ML (time series, control, neuro, reliability, recsys) | 8 | 65 | 8 |
-| `llm-training` | LLM pre-/post-training & architecture | 5 | 56 | 5 |
-| `llm-eval` | LLM evaluation & measurement studies | 3 | 6 | 3 |
+| `vision` | Vision & multimodal | 16 | 135 | 16 |
+| `safety-interp` | Safety, attacks, interpretability & auditing | 12 | 78 | 12 |
+| `agents` | LLM agents, memory & context systems | 15 | 56 | 15 |
+| `applied-sci` | Applied & scientific ML (time series, control, neuro, audio & speech, reliability, recsys) | 17 | 108 | 17 |
+| `llm-training` | LLM pre-/post-training & architecture | 6 | 71 | 6 |
+| `llm-eval` | LLM evaluation & measurement studies | 5 | 9 | 5 |
 
 ## Scoring
 
@@ -62,11 +62,11 @@ ForesightBench has mixed licensing; [LICENSE](LICENSE) has the full terms.
 
 | `source_license` | papers | corpus rows | eval rows |
 |---|---|---|---|
-| `cc-by-4.0` | 18 | 143 | 18 |
+| `cc-by-4.0` | 34 | 227 | 34 |
 | `cc-by-sa-4.0` | 2 | 7 | 2 |
 | `cc-by-nc-sa-4.0` | 1 | 2 | 1 |
-| `cc-by-nc-nd-4.0` | 1 | 1 | 1 |
-| `arxiv-nonexclusive-distrib-1.0` | 20 | 163 | 20 |
+| `cc-by-nc-nd-4.0` | 3 | 7 | 3 |
+| `arxiv-nonexclusive-distrib-1.0` | 31 | 214 | 31 |
 
 If you use a sample, you are responsible for respecting its source license.
 To keep only material whose source is CC BY 4.0 (with `corpus` loaded as in the Hugging Face section below):
